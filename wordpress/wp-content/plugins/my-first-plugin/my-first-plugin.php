@@ -8,6 +8,28 @@
  * Author URI: http://www.mywebsite.com
  */
 
+ // Direkten Aufruf verhindern
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
+
+
+###############
+//  if ( function_exists( 'wp_pagenavi' ) )
+// https://studentenwebdesign.de/wordpress-plugin-erstellen-tutorial/
+
+###############
+// function fn_googleMaps($atts, $content = null) {
+//    extract(shortcode_atts(array(
+//       "width" => 640,
+//       "height" => 480,
+//       "src" => ''
+//    ), $atts));
+//    return '<iframe width="' . $width . '" height="' . $height . '" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="' . $src . '&amp;output=embed"></iframe>';
+// }
+// add_shortcode("googlemap", "fn_googleMaps");
+
 function mhplg_no_rows_found_function($query)
 { 
   $query->set('no_found_rows', true); 
@@ -82,7 +104,10 @@ function mhplg_query_pagination_render_more_query() {
 //add_action( 'wp_ajax_nopriv_query_render_more_pagination', __NAMESPACE__ . '\query_pagination_render_more_query' );
 add_action( 'wp_enqueue_scripts', 'mhplg_query_pagination_render_more_query' );
 
+
 function mhplg_my_theme_scripts() {
+	###############
+	//plugin_dir_url( __FILE__ ) .
     wp_enqueue_script( 'my-great-script', '/wp-content/plugins/my-first-plugin/js/jquery-3.6.0.min.js', array( 'jquery' ), '3.6.0', true );
     wp_enqueue_script( 'my-first-plugin', '/wp-content/plugins/my-first-plugin/js/my-first-plugin.js', array( 'jquery' ), '0.0.1', true );
 }
