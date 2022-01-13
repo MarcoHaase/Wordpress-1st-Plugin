@@ -20,6 +20,9 @@ if ( ! defined( 'WPINC' ) ) {
 // https://studentenwebdesign.de/wordpress-plugin-erstellen-tutorial/
 
 ###############
+// https://wp-plugin-erstellen.de/ebook/kapitel-1-der-ueberblick/
+
+###############
 // function fn_googleMaps($atts, $content = null) {
 //    extract(shortcode_atts(array(
 //       "width" => 640,
